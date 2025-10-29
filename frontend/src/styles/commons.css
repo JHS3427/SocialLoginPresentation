@@ -1,0 +1,494 @@
+/* 공통 스타일 */
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans";
+  list-style-type: none;
+}
+
+:root {
+  --color-black: #333;
+  --color-blue: #0077cc;
+  --color-white: #fff;
+}
+
+/* 헤더 기본 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-white);
+  padding: 10px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 로고 */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-blue);
+}
+
+/* 중앙 메뉴 */
+.header-center ul {
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-center a {
+  text-decoration: none;
+  color: var(--color-black);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.header-center a.active {
+  color: var(--color-blue);
+  border-bottom: 2px solid var(--color-blue);
+}
+
+/* 우측 메뉴 */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 고객센터/로그인 공통 */
+.icon-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: var(--color-black);
+  font-weight: 500;
+}
+
+.icon-link .icon {
+  font-size: 1.2rem;
+}
+
+.icon-link.active {
+  color: var(--color-blue);
+}
+
+/* 검색 버튼 */
+.search-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* 햄버거 버튼 (기본 숨김) */
+.menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--color-black);
+}
+
+/* 반응형: 모바일 스타일 */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  /* 중앙 메뉴 숨기기 */
+  .header-center {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 60%;
+    height: 100vh;
+    background: var(--color-white);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px 20px;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+  }
+
+  .header-center ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .header-center.open {
+    right: 0;
+  }
+
+  /* 햄버거 버튼 표시 */
+  .menu-btn {
+    display: block;
+  }
+
+  /* 고객센터/로그인 텍스트 숨기고 아이콘만 표시 */
+  .icon-link .text {
+    display: none;
+  }
+}
+
+/* 푸터 영역 */
+.footer {
+  background: var(--color-white);
+  color: var(--color-black);
+  border-top: 1px solid #eeeeee;
+  padding: 50px 100px 30px;
+  font-size: 14px;
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* 로고 */
+.footer-logo img {
+  width: 120px;
+}
+
+/* 중앙 섹션 */
+.footer-links {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-links h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #555555;
+}
+
+.footer-links a:hover {
+  color: var(--color-blue);
+}
+
+.footer-links button {
+  color: #555555;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.footer-links button:hover {
+  color: var(--color-blue);
+}
+
+/* 오른쪽 회사 정보 */
+.footer-info {
+  max-width: 300px;
+}
+
+.footer-social {
+  margin-bottom: 10px;
+}
+
+.footer-social a {
+  margin-right: 10px;
+  color: #555555;
+  font-size: 18px;
+}
+
+.footer-social a:hover {
+  color: var(--color-blue);
+}
+
+.footer-policy {
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+.footer-policy a {
+  color: #777777;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+/* .footer-lang {
+  margin-top: 15px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background: var(--color-white);
+} */
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #999999;
+}
+
+/* 🚀 TOP 버튼 */
+.top-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.top-btn:hover {
+  background-color: #005fa3;
+  transform: translateY(-3px);
+}
+
+/* 💻 태블릿 (768px~1024px) → 2열 구조 */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 40px 40px 20px;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-info {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+  }
+}
+
+/* 📱 모바일 (767px 이하) → 세로 1열 */
+@media (max-width: 767px) {
+  .footer {
+    padding: 40px 20px 20px;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  /* 로고 중앙 정렬 */
+  .footer-logo {
+    text-align: center;
+  }
+
+  /* 중앙 링크 블록화 */
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .footer-links div {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .footer-info {
+    text-align: center;
+  }
+
+  .footer-social a {
+    font-size: 20px;
+    margin: 0 6px;
+  }
+
+  .footer-policy {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .footer-lang {
+    margin-top: 20px;
+  }
+
+  .top-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* 페이지 공통 */
+.common-page {
+  text-align: left;
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.common-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* 이용약관 페이지 */
+.terms-container h2 {
+  margin-top: 40px;
+  font-size: 1.3rem;
+  color: #0077cc;
+  border-bottom: 2px solid #0077cc;
+  padding-bottom: 5px;
+}
+
+.terms-container h3 {
+  margin-top: 25px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.terms-container p,
+.terms-container li {
+  margin: 6px 0;
+  list-style-type: decimal;
+}
+
+.terms-container ul,
+.terms-container ol {
+  
+  margin-left: 20px;
+  padding: 0;
+}
+
+.terms-footer {
+  margin-top: 50px;
+  font-weight: 600;
+  text-align: right;
+  color: #555;
+}
+
+/* 개인정보 취급방침 페이지 */
+.privacy-page {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 20px;
+  line-height: 1.7;
+  font-family: "Pretendard", sans-serif;
+  color: #333;
+}
+
+.privacy-page h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #0077cc;
+}
+
+.privacy-page h2 {
+  font-size: 1.2rem;
+  margin-top: 30px;
+  color: #005fa3;
+}
+
+.privacy-page ul {
+  margin-left: 20px;
+  padding: 0;
+  list-style: disc;
+}
+
+.privacy-page li {
+  list-style-type: circle;
+}
+
+.privacy-page p {
+  margin: 10px 0;
+}
+
+/* 내부정보 관리규정 */
+.internalpolicy-page {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 30px;
+  line-height: 1.8;
+  font-family: "Pretendard", sans-serif;
+  color: #333;
+}
+
+.internalpolicy-page h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #0077cc;
+  margin-bottom: 40px;
+}
+
+.internalpolicy-page h2 {
+  font-size: 1.3rem;
+  color: #005fa3;
+  margin-top: 40px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.internalpolicy-page h3 {
+  font-size: 1.1rem;
+  color: #222;
+  margin-top: 25px;
+}
+
+.internalpolicy-page p {
+  margin: 10px 0;
+  white-space: pre-line;
+}
+
+.internalpolicy-page ol {
+  margin-left: 20px;
+  padding: 0;
+  list-style-type: decimal;
+}
+
+.internalpolicy-page li {
+  padding: 0;
+  list-style-type: decimal;
+}

@@ -1,0 +1,52 @@
+.SignUpPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-items: center;
+    background-color: #f7f7f7;
+}
+
+.SignTitle{
+    margin-bottom: 5%;
+}
+
+.IdPassSection{
+    width : 80%;
+    height : 200px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-items: center;
+}
+
+.IdBox{
+    position: relative;
+    width: 100%;
+}
+
+.IdPassSection input{
+    width: 100%;
+    height: 45px;
+}
+.IdPassSection .IdBox .NamePlaceholder,
+.IdPassSection .IdBox .NamePlaceholder2{
+    position: absolute;
+    left : 0px;
+    transition: top 0.5s ease-out;
+}
+.IdPassSection .IdBox .NamePlaceholder{
+    top : 0rem;
+}
+.IdPassSection .IdBox .NamePlaceholder2{
+    top : -1.5rem;
+}
+
+.IdDuplCheck{
+    position: absolute;
+    right : 0rem;/* 1. 인풋 박스 높이의 50% 지점으로 이동 */
+    top: 50%;
+     
+    /* 2. 버튼 자신의 높이의 절반만큼 다시 위로 이동하여 정확한 중앙에 위치 */
+    transform: translateY(-50%);
+}

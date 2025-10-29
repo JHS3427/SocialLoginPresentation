@@ -1,0 +1,38 @@
+[
+    {
+        "pid" : "1",
+        "name": "우래옥 본점",
+        "like": "★☆☆",
+        "tag": "냉면",
+        "image1": "/images/food1_1.webp",
+        "image2": "/images/food1_2.webp",
+        "image3": "/images/food1_3.webp",
+        "description": [
+            "맛집 상세 설명"
+        ]
+    },
+    {
+        "pid" : "2",
+        "name": "만포면옥 본점",
+        "like": "★★☆",
+        "tag": "만두",
+        "image1": "/images/food2_1.webp",
+        "image2": "/images/food2_2.webp",
+        "image3": "/images/food2_3.webp",
+        "description": [
+            "맛집 상세 설명"
+        ]
+    },
+    {
+        "pid" : "3",
+        "name": "능동미나리 용리단길",
+        "like": "★★★",
+        "tag": "수육전골",
+        "image1": "/images/food3_1.webp",
+        "image2": "/images/food3_2.webp",
+        "image3": "/images/food3_3.webp",
+        "description": [
+            "맛집 상세 설명"
+        ]
+    }
+]

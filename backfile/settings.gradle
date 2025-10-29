@@ -1,0 +1,4 @@
+rootProject.name = 'bicycle-app'
+include 'backend' //springboot project
+include 'frontend' // react project
+

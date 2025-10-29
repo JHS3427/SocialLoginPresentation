@@ -1,0 +1,38 @@
+[
+    {
+        "pid" : "1",
+        "name": "춘천 공지천",
+        "like": "★☆☆",
+        "distance": "27km",
+        "image1": "/images/walk1_1.jpg",
+        "image2": "/images/walk1_2.jpg",
+        "image3": "/images/walk1_3.jpg",
+        "description": [
+            "산책로 상세 설명"
+        ]
+    },
+    {
+        "pid" : "2",
+        "name": "속초 영랑호",
+        "like": "★☆☆",
+        "distance": "7km",
+        "image1": "/images/walk2_1.jpg",
+        "image2": "/images/walk2_2.jpg",
+        "image3": "/images/walk2_3.jpg",
+        "description": [
+            "산책로 상세 설명"
+        ]
+    },
+    {
+        "pid" : "3",
+        "name": "부산 삼락생태공원",
+        "like": "★★★",
+        "distance": "3km",
+        "image1": "/images/walk3_1.jpg",
+        "image2": "/images/walk3_2.jpg",
+        "image3": "/images/walk3_3.jpg",
+        "description": [
+            "산책로 상세 설명"
+        ]
+    }
+]
