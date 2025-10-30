@@ -34,18 +34,18 @@ public class OauthServiceImpl implements OauthService{
             conn.setRequestMethod("POST");
             conn.setDoOutput(true);
 
-            //POST 요청에 필요로 요구하는 파라미터 스트림을 통해 전송
+            //POST 요청에 필요한 파라미터 스트림을 작성, flush로 전송
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
             StringBuilder sb = new StringBuilder();
             sb.append("grant_type=authorization_code");
 
             if( token.getSocial().equals("kakao")){
-                sb.append("&client_id=ef9794cb2ff6a12a26f6432f5ec9a04b"); // TODO REST_API_KEY 입력
-                sb.append("&redirect_uri=http://localhost:3000/auth"); // TODO 인가코드 받은 redirect_uri 입력
+                sb.append("~~~~~~~~~~"); // TODO REST_API_KEY 입력
+                sb.append("~~~~~~~~~~"); // TODO 인가코드 받은 redirect_uri 입력
                 }
             else if(token.getSocial().equals("naver")){
-                sb.append("&client_id=qxdiERkzD3t06kqHGYdp");//네이버 클라이언트ID
-                sb.append("&client_secret=0jzlDIssrs");//네이버 클라이언트 비밀번호
+                sb.append("~~~~~~~~~~");//네이버 클라이언트ID
+                sb.append("~~~~~~~~~~");//네이버 클라이언트 비밀번호
             }
             sb.append("&code=" + token.getAuthCode());
 
@@ -150,7 +150,7 @@ public class OauthServiceImpl implements OauthService{
             // 카카오 {"id":숫자,"connected_at":"2025-10-18T06:12:07Z"}
             // 네이버 {"resultcode":"00","message":"success",
             //          "response":{"id":"긴 문자열 ",
-            //                      "nickname":"jhs3427****","email":"jhs34276225@jr.naver.com"}}
+            //                      "nickname":"~~~~~~~~~~","email":"~~~~~~~~~~"}}
         } catch (IOException e) {
             e.printStackTrace();
         }
