@@ -17,13 +17,13 @@ public class OauthServiceImpl implements OauthService{
 
     @Override
     public String getSocialAccessToken (Token token) {
-        String access_Token = "";
-        String refresh_Token = "";
-        String reqURL="";
+        String access_Token = ""; //플랫폼에서 받을 데이터를 저장하기 위한 변수 선언
+        String refresh_Token = "";//플랫폼에서 받을 데이터를 저장하기 위한 변수 선언
+        String reqURL="";       //접근할 플랫폼 URL을 저장하기 위한 변수 선언
         if( token.getSocial().equals("kakao")){
-            reqURL = "https://kauth.kakao.com/oauth/token";}
+            reqURL = "https://kauth.kakao.com/oauth/token";} // 이 정보는 카카오톡 공식 API 문서 : 카카오 로그인- REST API - 토큰요청에 있다.
         else if(token.getSocial().equals("naver")){
-            reqURL = "https://nid.naver.com/oauth2.0/token";}
+            reqURL = "https://nid.naver.com/oauth2.0/token";}// 이 정보는 네이버 공식 API 문서 : 로그인 API 명세 - 2. API 기본 정보에 있다
         try {
             URL url = new URL(reqURL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -61,7 +61,7 @@ public class OauthServiceImpl implements OauthService{
             String line = "";
             String result = "";
 
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null) {//읽어온 데이터를 한줄씩 line으로 읽어서 result에 넣기
                 result += line;
             }
             System.out.println("response body : " + result);
@@ -82,7 +82,7 @@ public class OauthServiceImpl implements OauthService{
             e.printStackTrace();
         }
 
-        return access_Token;
+        return access_Token;//목표 1 완료
     }
 
     @Override
@@ -135,9 +135,9 @@ public class OauthServiceImpl implements OauthService{
 
             if(social.equals("kakao")){
 //                키 존재 여부는 카카오니까 무시
-//                3. "id" 키의 값을 JsonPrimitive(원시 값) 형태로 가져옵니다
+//                "id" 키의 값을 JsonPrimitive(원시 값) 형태로 가져옴
                 JsonPrimitive idPrimitive = jsonObject.getAsJsonPrimitive("id");
-                // 4. 값을 원하는 타입(여기서는 String)으로 변환하여 사용합니다.
+                // 값을 원하는 타입(여기서는 String)으로 변환해서 사용
                 id = idPrimitive.getAsString();
             }
             else if(social.equals("naver")){
